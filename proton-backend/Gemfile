@@ -1,0 +1,2 @@
+eval(File.read('../setup_gems.rb'))
+gemspec
