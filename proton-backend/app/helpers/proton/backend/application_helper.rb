@@ -7,6 +7,15 @@ module Proton
           concat content_tag(:span, content)
         end
       end
+
+      def bs_flash_text(flash_type)
+        text_class = case flash_type
+                       when :alert then 'danger'
+                       when :notice then 'success'
+                     end
+
+        content_tag :span, flash[flash_type], class: "text-#{text_class}"
+      end
     end
   end
 end

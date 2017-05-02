@@ -1,7 +1,7 @@
 require 'test_helper'
 
 module Proton::Backend
-  class DashboardControllerTest < ActionDispatch::IntegrationTest
+  class HomeControllerTest < ActionDispatch::IntegrationTest
     include Engine.routes.url_helpers
 
     # test "the truth" do

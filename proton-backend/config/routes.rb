@@ -1,3 +1,5 @@
 Proton::Backend::Engine.routes.draw do
-  root to: 'dashboard#index'
+  root to: 'home#dashboard'
+  get 'signin' => 'home#signin', as: :signin
+  post 'signin' => 'home#create_session', as: :create_session
 end

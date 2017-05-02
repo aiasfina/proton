@@ -3,6 +3,7 @@ PATH
   specs:
     proton-backend (0.1.0)
       gentelella-rails (~> 0.1.4)
+      turbolinks (~> 5.0.1)
 
 GEM
   remote: https://gems.ruby-china.org/

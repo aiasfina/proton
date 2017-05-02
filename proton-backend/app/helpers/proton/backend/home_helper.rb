@@ -1,4 +1,4 @@
 module Proton::Backend
-  module DashboardHelper
+  module HomeHelper
   end
 end

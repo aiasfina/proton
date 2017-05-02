@@ -10,6 +10,14 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require turbolinks
 //= require gentelella
 //= require proton/backend/gentelella-custom
 //= require_tree .
+
+$(document).ready(function() {
+  init_sidebar();
+  init_wysiwyg();
+  init_InputMask();
+  init_autosize();
+});

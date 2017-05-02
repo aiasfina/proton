@@ -4,8 +4,10 @@
 
 <div class="profile clearfix">
   <div class="profile_pic"></div>
-  <div class="profile_info">
-    <span>Welcome,</span>
-    <h2>John Doe</h2>
+  <div class="profile_info clearfix">
+    <div class="pull-right">
+      <span>Welcome,</span>
+      <h2><%= current_user.email %></h2>
+    </div>
   </div>
 </div>

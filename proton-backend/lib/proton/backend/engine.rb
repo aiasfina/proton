@@ -1,4 +1,5 @@
 require 'gentelella-rails'
+require 'turbolinks'
 
 module Proton
   module Backend
