@@ -8,6 +8,13 @@ module Proton
         end
       end
 
+      def fa_icon_menu_link(path, fa, content, **other)
+        link_to path, other do
+          concat content_tag(:i, nil, class: "fa fa-#{fa} pull-right")
+          concat content_tag(:span, content)
+        end
+      end
+
       def bs_flash_text(flash_type)
         text_class = case flash_type
                        when :alert then 'danger'

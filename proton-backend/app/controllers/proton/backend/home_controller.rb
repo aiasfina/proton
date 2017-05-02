@@ -21,5 +21,10 @@ module Proton::Backend
         render :signin, layout: false
       end
     end
+
+    def destroy_session
+      logout
+      redirect_to signin_url
+    end
   end
 end
