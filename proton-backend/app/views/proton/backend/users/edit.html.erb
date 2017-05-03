@@ -1,5 +1,6 @@
 <% content_for :tab_content do %>
-  <%= form_with model: @user, class: 'form-horizontal form-label-left' do |f| %>
+  <div id="form-alert-container"></div>
+  <%= form_with model: @user, class: 'form-horizontal form-label-left', data: {'parsley-validate' => true} do |f| %>
     <div class="form-group">
       <%= f.label :email, class: 'control-label col-md-3 col-sm-3 col-xs-12' %>
       <div class="col-md-6 col-sm-6 col-xs-12">

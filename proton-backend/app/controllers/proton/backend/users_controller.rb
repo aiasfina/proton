@@ -14,22 +14,14 @@ module Proton::Backend
 
     def create
       @user = Proton::Core::User.new params.require(:user).permit!
-      if @user.save
-        redirect_to edit_user_url(@user)
-      else
-        render :new
-      end
+      @user.save
     end
 
     def edit
     end
 
     def update
-      if @user.update params.require(:user).permit!
-        redirect_to edit_user_url(@user)
-      else
-        render :edit
-      end
+      @user.update params.require(:user).permit(:email)
     end
 
     private
