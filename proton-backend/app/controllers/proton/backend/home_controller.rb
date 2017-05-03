@@ -2,7 +2,7 @@ require_dependency "proton/backend/application_controller"
 
 module Proton::Backend
   class HomeController < ApplicationController
-    before_action :require_login, except: [:signin, :create_session]
+    skip_before_action :require_login, only: [:signin, :create_session]
 
     def dashboard
     end
