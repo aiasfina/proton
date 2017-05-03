@@ -9,7 +9,15 @@
   </div>
   <div class="form-group">
     <%= f.label :content, class: 'control-label' %>
-    <%= f.text_area :content, class: 'form-control form-control---cm' %>
+    <%= f.text_area :content, class: 'form-control form-control---cm', data: {cm: {mode: 'htmlmixed'}} %>
+  </div>
+  <div class="form-group">
+    <%= f.label :js, class: 'control-label' %>
+    <%= f.text_area :js, class: 'form-control form-control---cm', data: {cm: {mode: 'js'}} %>
+  </div>
+  <div class="form-group">
+    <%= f.label :css, class: 'control-label' %>
+    <%= f.text_area :css, class: 'form-control form-control---cm', data: {cm: {mode: 'css'}} %>
   </div>
   <div class="ln_solid"></div>
     <div class="form-group">
@@ -19,6 +27,6 @@
 
 <% content_for :script do %>
   <script>
-    init_codemirror($('.form-control---cm'), {lineNumbers: true, mode: 'htmlmixed'});
+    init_codemirror($('.form-control---cm'), {lineNumbers: true});
   </script>
 <% end %>
