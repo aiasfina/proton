@@ -1,0 +1,28 @@
+<% content_for :tab_content do %>
+  <div class="row tab-content">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="x_content">
+        <div class="table-responsive">
+          <table class="table table-striped jambo_table bulk_action">
+            <thead>
+              <tr class="headings">
+                <th class="column-title">Email </th>
+                <th class="column-title">Action </th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @users.each do |user| %>
+                <tr>
+                  <td><%= user.email %></td>
+                  <td><%= link_to 'Edit', edit_user_path(user) %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<%= render 'tab' %>

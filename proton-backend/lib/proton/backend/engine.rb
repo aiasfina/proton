@@ -1,5 +1,6 @@
 require 'gentelella-rails'
 require 'turbolinks'
+require 'kaminari'
 
 module Proton
   module Backend
