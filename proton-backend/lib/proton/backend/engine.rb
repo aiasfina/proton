@@ -1,6 +1,7 @@
 require 'gentelella-rails'
 require 'turbolinks'
 require 'kaminari'
+require 'codemirror-rails'
 
 module Proton
   module Backend
@@ -11,7 +12,7 @@ module Proton
         app.config.assets.paths << "#{Rails.root}/app/assets/fonts"
         app.config.assets.precompile << /\.(?:svg|eot|woff|ttf)$/
 
-        app.config.assets.precompile += %w[]
+        app.config.assets.precompile += %w[codemirror* codemirror/**/*]
       end
     end
   end

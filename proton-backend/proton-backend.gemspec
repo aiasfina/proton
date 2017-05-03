@@ -18,4 +18,5 @@ Gem::Specification.new do |s|
   s.add_dependency 'gentelella-rails', '~> 0.1.4'
   s.add_dependency 'turbolinks', '~> 5.0.1'
   s.add_dependency 'kaminari', '~> 1.0.1'
+  s.add_dependency 'codemirror-rails', '~> 5.16.0'
 end

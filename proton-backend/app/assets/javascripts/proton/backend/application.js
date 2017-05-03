@@ -11,6 +11,12 @@
 // about supported directives.
 //
 //= require gentelella
+//= require codemirror
+//= require codemirror/modes/xml
+//= require codemirror/modes/htmlmixed
+//= require codemirror/modes/htmlembedded
+//= require codemirror/modes/javascript
+//= require codemirror/modes/css
 //= require proton/backend/gentelella-custom
 //= require_tree .
 
@@ -20,3 +26,13 @@ $(document).ready(function() {
   init_InputMask();
   init_autosize();
 });
+
+window.init_codemirror = function($nodes, options) {
+  options = options || {}
+
+  $.each($nodes, function(i, textarea) {
+    var $textarea = $(textarea)
+    var _options = $.extend({}, options, $textarea.data('cm'))
+    var editor = CodeMirror.fromTextArea(textarea, _options)
+  })
+}
