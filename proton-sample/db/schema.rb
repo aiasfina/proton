@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170502192743) do
+ActiveRecord::Schema.define(version: 20170503095114) do
 
   create_table "core_users", force: :cascade do |t|
     t.string "email", null: false
@@ -19,6 +19,19 @@ ActiveRecord::Schema.define(version: 20170502192743) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_core_users_on_email", unique: true
+  end
+
+  create_table "proton_core_posts", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.string "title", null: false
+    t.string "type"
+    t.text "content", default: ""
+    t.datetime "published_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["published_at"], name: "index_proton_core_posts_on_published_at"
+    t.index ["type"], name: "index_proton_core_posts_on_type"
+    t.index ["user_id"], name: "index_proton_core_posts_on_user_id"
   end
 
 end
