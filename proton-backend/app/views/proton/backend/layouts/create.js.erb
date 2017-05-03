@@ -1,0 +1,7 @@
+(function() {
+  <% if @layout.errors.any? %>
+    $('#form-alert-container').html('<%= j render("proton/backend/share/errors_alert", model: @layout) %>')
+  <% else %>
+    $('#form-alert-container').html('<%= j render("proton/backend/share/success_notice", message: 'Success.') %>')
+  <% end %>
+}());
