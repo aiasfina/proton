@@ -5,6 +5,8 @@ class CreateProtonLayerLayouts < ActiveRecord::Migration[5.1]
       t.string :identify, null: false
       t.string :title, null: false
       t.text :content, default: ''
+      t.text :css, default: ''
+      t.text :js, default: ''
 
       t.timestamps
     end

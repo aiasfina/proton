@@ -26,6 +26,8 @@ ActiveRecord::Schema.define(version: 20170503101812) do
     t.string "identify", null: false
     t.string "title", null: false
     t.text "content", default: ""
+    t.text "css", default: ""
+    t.text "js", default: ""
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["identify"], name: "index_layer_layouts_on_identify", unique: true
