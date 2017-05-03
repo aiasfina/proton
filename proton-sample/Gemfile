@@ -52,3 +52,4 @@ end
 
 gem 'proton-core', path: '../proton-core'
 gem 'proton-backend', path: '../proton-backend'
+gem 'proton-layer', path: '../proton-layer'
