@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170503095114) do
+ActiveRecord::Schema.define(version: 20170503101812) do
 
   create_table "core_users", force: :cascade do |t|
     t.string "email", null: false
@@ -19,6 +19,17 @@ ActiveRecord::Schema.define(version: 20170503095114) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_core_users_on_email", unique: true
+  end
+
+  create_table "layer_layouts", force: :cascade do |t|
+    t.integer "parent_id"
+    t.string "identify", null: false
+    t.string "title", null: false
+    t.text "content", default: ""
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["identify"], name: "index_layer_layouts_on_identify", unique: true
+    t.index ["parent_id"], name: "index_layer_layouts_on_parent_id"
   end
 
   create_table "proton_core_posts", force: :cascade do |t|

@@ -5,4 +5,5 @@ Proton::Backend::Engine.routes.draw do
   delete 'signout' => 'home#destroy_session', as: :destroy_session
 
   resources :users
+  resources :layouts
 end
