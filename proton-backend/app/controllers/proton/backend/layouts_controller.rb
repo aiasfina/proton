@@ -22,6 +22,7 @@ module Proton::Backend
 
     def update
       @layout.update params.require(:layout).permit!
+      render :create, layouts: false
     end
 
     def destroy
