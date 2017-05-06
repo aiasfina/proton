@@ -1,0 +1,22 @@
+<div class="x_panel">
+  <div class="x_content">
+    <div role="tabpanel">
+      <ul class="nav nav-tabs bar_tabs right" role="tablist">
+        <% if action_name == 'edit' %>
+          <li role="presentation" class="active"><a href="javascript;;">Edit</a></li>
+        <% end %>
+        <li role="presentation" class="<%= 'active' if action_name == 'new' %>">
+          <%= link_to 'New', new_page_path %>
+        </li>
+        <li role="presentation" class="<%= 'active' if action_name == 'index' %>">
+          <%= link_to 'List', pages_path %>
+        </li>
+      </ul>
+
+      <div class="tab-content container">
+        <div id="form-alert-container"></div>
+        <%= yield :tab_content %>
+      </div>
+    </div>
+  </div>
+</div>

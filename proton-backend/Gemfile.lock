@@ -2,6 +2,7 @@ PATH
   remote: .
   specs:
     proton-backend (0.1.0)
+      codemirror-rails (~> 5.16.0)
       gentelella-rails (~> 0.1.4)
       kaminari (~> 1.0.1)
       turbolinks (~> 5.0.1)
@@ -74,6 +75,8 @@ GEM
       railties (> 3.1)
     childprocess (0.6.3)
       ffi (~> 1.0, >= 1.0.11)
+    codemirror-rails (5.16.0)
+      railties (>= 3.0, < 6.0)
     coercible (1.0.0)
       descendants_tracker (~> 0.0.1)
     coffee-rails (4.2.1)

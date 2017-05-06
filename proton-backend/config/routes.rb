@@ -6,4 +6,5 @@ Proton::Backend::Engine.routes.draw do
 
   resources :users
   resources :layouts
+  resources :pages
 end

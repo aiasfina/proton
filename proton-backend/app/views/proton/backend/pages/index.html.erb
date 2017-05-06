@@ -1,0 +1,32 @@
+<% content_for :tab_content do %>
+  <div class="row tab-content">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="x_content">
+        <div class="table-responsive">
+          <table class="table table-striped jambo_table bulk_action">
+            <thead>
+              <tr class="headings">
+                <th class="column-title">Title </th>
+                <th class="column-title">Identify </th>
+                <th class="column-title">Url </th>
+                <th class="column-title">Action </th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @pages.each do |page| %>
+                <tr>
+                  <td><%= page.title %></td>
+                  <td><%= page.identify %></td>
+                  <td><%= page.url %></td>
+                  <td><%= link_to 'Edit', edit_page_path(page) %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<%= render 'tab' %>

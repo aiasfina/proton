@@ -1,0 +1,37 @@
+<%= form_with model: @page, data: {'parsley-validate' => true} do |f| %>
+  <div class="form-group col-md-6 col-sm-6 col-xs-12">
+    <%= f.label :title, class: 'control-label' %>
+    <%= f.text_field :title, class: 'form-control', required: true %>
+  </div>
+  <div class="form-group col-md-6 col-sm-6 col-xs-12">
+    <%= f.label :identify, class: 'control-label' %>
+    <%= f.text_field :identify, class: 'form-control', required: true %>
+  </div>
+  <div class="form-group col-md-6 col-sm-6 col-xs-12">
+    <%= f.label :url, class: 'control-label' %>
+    <%= f.text_field :url, class: 'form-control', required: true %>
+  </div>
+  <div class="form-group col-md-6 col-sm-6 col-xs-12">
+    <%= f.label :layout, class: 'control-label' %>
+    <%= f.select :layout_id,
+      Proton::Layer::Layout.all.collect { |l| [l.title, l.id] },
+      {include_blank: true},
+      {class: 'form-control', required: true}
+    %>
+  </div>
+  <div class="form-group col-xs-12">
+    <%= f.label :content, class: 'control-label' %>
+    <%= f.text_area :content, class: 'form-control form-control---cm', data: {cm: {mode: 'htmlmixed'}} %>
+  </div>
+  <div class="clearfix"></div>
+  <div class="ln_solid"></div>
+    <div class="form-group">
+      <%= f.submit 'Submit', class: 'btn btn-success' %>
+    </div>
+<% end %>
+
+<% content_for :script do %>
+  <script>
+    init_codemirror($('.form-control---cm'), {lineNumbers: true});
+  </script>
+<% end %>
