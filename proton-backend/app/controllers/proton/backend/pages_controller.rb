@@ -3,6 +3,7 @@ require_dependency "proton/backend/application_controller"
 module Proton::Backend
   class PagesController < ApplicationController
     before_action :set_page, except: [:index, :new, :create]
+    layout false, only: [:preview]
 
     def index
       @pages = Proton::Layer::Page.page params[:page]
@@ -28,6 +29,9 @@ module Proton::Backend
     def update
       @page.update params.require(:page).permit!
       render_update_js(@page)
+    end
+
+    def preivew
     end
 
     private

@@ -6,5 +6,7 @@ Proton::Backend::Engine.routes.draw do
 
   resources :users
   resources :layouts
-  resources :pages
+  resources :pages do
+    get 'preview', on: :member
+  end
 end

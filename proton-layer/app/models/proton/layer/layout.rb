@@ -9,7 +9,7 @@ module Proton::Layer
 
     TAG_REGEXP = /{{\s*(css|js):(.*?)\s*}}/
     def scan_and_convert_tag
-      content.gsub!(TAG_REGEXP) do |match|
+      content.gsub(TAG_REGEXP) do |match|
         if /{{\s*js:(.*?)\s*}}/ =~ match
           javascript_include_tag(js_path($1))
         elsif /{{\s*css:(.*?)\s*}}/ =~ match
