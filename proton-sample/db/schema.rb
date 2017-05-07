@@ -40,7 +40,6 @@ ActiveRecord::Schema.define(version: 20170505155841) do
     t.string "title", default: ""
     t.string "identify", null: false
     t.text "content", default: ""
-    t.text "content_merged", default: ""
     t.datetime "published_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

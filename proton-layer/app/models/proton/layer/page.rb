@@ -8,12 +8,24 @@ module Proton::Layer
     validates :layout_id, presence: true
     validates :identify, presence: true, uniqueness: true
 
-    before_save :merge_with_layout
-    def merge_with_layout
-      self.content_merged =
-        layout
-        .scan_and_convert_tag
+    TAG_REGEXP = /{{\s*(css|js):(.*?)\s*}}/
+    def render
+      layout_content = layout.content
+
+      layout_content
+        .gsub!(TAG_REGEXP) do |match|
+          if /{{\s*js:(.*?)\s*}}/ =~ match
+            javascript_include_tag(js_path($1))
+          elsif /{{\s*css:(.*?)\s*}}/ =~ match
+            stylesheet_link_tag(css_path($1))
+          end
+        end
         .gsub!(/{{\s*yield\s*}}/, content)
+
+      layout_content
     end
+
+    delegate :js_path, :css_path, to: :'Proton::Layer::Engine.routes.url_helpers'
+    delegate :javascript_include_tag, :stylesheet_link_tag, to: :'ActionController::Base.helpers'
   end
 end

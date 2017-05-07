@@ -7,7 +7,6 @@ class CreateProtonLayerPages < ActiveRecord::Migration[5.1]
       t.string :identify, null: false
       t.string :title, default: ''
       t.text :content, default: ''
-      t.text :content_merged, default: ''
       t.datetime :published_at
 
       t.timestamps
