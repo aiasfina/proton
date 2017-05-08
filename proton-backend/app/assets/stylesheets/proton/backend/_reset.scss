@@ -3,3 +3,18 @@
     border: solid 1px #999;
   }
 }
+
+.btn-group {
+  &.toolbar--file-upload {
+    overflow: hidden;
+    position: relative;
+
+    input[type="file"] {
+      position: absolute;
+      left: -20px;
+      top: -20px;
+      padding-left: 100px;
+      height: 100px;
+    }
+  }
+}
