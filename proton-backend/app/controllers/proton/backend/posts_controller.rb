@@ -3,6 +3,7 @@ require_dependency "proton/backend/application_controller"
 module Proton::Backend
   class PostsController < ApplicationController
     before_action :set_post, except: [:index, :new, :create]
+    layout false, only: [:new, :edit]
 
     def index
       @posts = Proton::Core::Post.page params[:page]
@@ -13,9 +14,13 @@ module Proton::Backend
     end
 
     def create
-      @post = Proton::Core::Post.build params.require(:post).permit!
-      @post.save
-      render_update_js(@post)
+      @post = current_user.posts.build params.require(:post).permit!
+
+      if @post.save
+        render json: {id: @post.id}.to_json
+      else
+        head :internal_server_error
+      end
     end
 
     def edit
@@ -24,7 +29,7 @@ module Proton::Backend
 
     def update
       @post.update params.require(:post).permit!
-      render_update_js(@post)
+      head :ok
     end
 
     private

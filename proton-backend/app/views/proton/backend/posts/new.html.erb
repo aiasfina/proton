@@ -1,5 +1,29 @@
-<% content_for :tab_content do %>
-  <%= render 'form' %>
-<% end %>
+<!DOCTYPE html>
+<html class="medium-editor">
+<head>
+  <title>Proton backend</title>
+  <%= stylesheet_link_tag    "proton/backend/application", media: "all" %>
+  <script>
+    window.CSRF = {
+      param: <%= raw request_forgery_protection_token.to_s.inspect %>,
+      token: <%= raw form_authenticity_token.to_s.inspect %>
+    }
+  </script>
+</head>
+<body class="nav-md">
+  <main id="main"></main>
 
-<%= render 'tab' %>
+  <%= javascript_include_tag "proton/backend/application" %>
+  <% if @post.new_record? %>
+    <script>initPostForm();</script>
+  <% else %>
+    <script>
+    initPostForm(
+      <%= @post.id %>,
+      <%= raw @post.title.inspect %>,
+      <%= raw @post.content.inspect %>
+    );
+    </script>
+  <% end %>
+</body>
+</html>

@@ -6,7 +6,7 @@
           <li role="presentation" class="active"><a href="javascript;;">Edit</a></li>
         <% end %>
         <li role="presentation" class="<%= 'active' if action_name == 'new' %>">
-          <%= link_to 'New', new_post_path %>
+          <%= link_to 'New', new_post_path, target: '_blank' %>
         </li>
         <li role="presentation" class="<%= 'active' if action_name == 'index' %>">
           <%= link_to 'List', posts_path %>

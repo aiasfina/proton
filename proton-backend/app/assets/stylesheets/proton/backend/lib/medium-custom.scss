@@ -1,0 +1,59 @@
+html.medium-editor {
+  body {
+    background-color: #fff;
+    color: #999;
+  }
+
+  .container {
+    max-width: 768px;
+  }
+
+  .editorable-toolbar {
+    padding: 10px 20px;
+    box-shadow: 0px 4px 5px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    z-index: 10000;
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    .editorable-toolbar--column {
+      flex-grow: 1;
+      text-align: center;
+    }
+    .btn-default {
+      padding: 6px 12px;
+      font-size: 12px;
+      border-radius: 14px;
+    }
+  }
+
+  .post-title, #editor {
+    border: none;
+    box-shadow: none;
+    outline: none;
+  }
+
+  .post-title {
+    margin-top: 80px;
+    margin-bottom: 20px;
+    border-bottom: solid 1px #eee;
+    font-size: 28px;
+    padding: 10px 20px;
+    height: auto;
+  }
+
+  #editor {
+    overflow: auto;
+    font-size: 16px;
+    max-height: none;
+    height: auto;
+    min-height: 600px;
+  }
+
+  .medium-editor-placeholder {
+    &:after {
+      display: none;
+    }
+  }
+}
